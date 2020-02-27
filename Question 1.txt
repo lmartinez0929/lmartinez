@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int convertToCel(int f)
+{
+  int Cel = (f - 32)*5 / 9;
+
+  return Cel;
+}
+
+double convertToKel(int c)
+{
+  double Kel = (c + 273.15);
+
+  return Kel;
+}
+
+int main(void) {
+  int userVal = 0;
+
+  printf("Enter value in Fahrenheit: ");
+  scanf("%d", &userVal);
+
+  //convertToCel(userVal);
+  printf("Value in Celsius is: %d\n", convertToCel(userVal));
+
+  printf("Value in Kelvin is: %fl\n", convertToKel(convertToCel(userVal)));
+
+  return 0;
+}
