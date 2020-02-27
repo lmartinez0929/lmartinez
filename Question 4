@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void) {
+
+ int array[] = { 30, 40, 50, 60, 70, 80 };
+ int i;
+ 
+
+ int *ptrA = array;
+ int *ptrB = ptrA + 4;
+ int *ptrC = ptrB--;
+
+ array[ 1 ] = 2;
+ *ptrB = *ptrC - 2;
+ *ptrC = 100;
+ array[ 3 ] = *ptrA++;
+ ptrC = ptrB + 2;
+
+ for (i = 0; i < 6; i++ )
+ {
+   printf("%d\n", i);
+ }
+
+  return 0;
+}
