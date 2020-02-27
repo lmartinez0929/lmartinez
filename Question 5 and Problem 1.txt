@@ -26,7 +26,7 @@ for (i = 0; i < SIZE * SIZE; i++)
 {
   int row = i / SIZE;
   int col = i % SIZE;
-  printf("%d", array[row][col]);
+  printf("%d ", array[row][col]);
 }
 printf("\n");
 
