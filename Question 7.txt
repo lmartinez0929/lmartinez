@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int doMagic1(int a, int b, int *c)
+{
+  int temp = b;
+  a = temp;
+  *c = *c + a * b;
+
+  return temp;
+}
+
+int doMagic2 (int *a, int b, int c)
+{
+  *a = b;
+  b = c;
+  c = 15;
+
+  return b;
+}
+
+int doMagic3( int a, int b, int c)
+{
+  doMagic2(&a, b, c);
+  return a;
+}
+
+int main( int argc, char *argv[] )
+{
+  int alpha = 10;
+  int beta = 20;
+  int gamma = 30;
+
+  /* code fragment goes here*/
+
+  printf( "%d %d %d\n", alpha, beta, gamma);
+
+  return 0;
+}
+
+//CODE FRAGMENTS
+/*
+printf( "%d\n", doMagic1( alpha, beta, &gamma ) );
+printf( "%d\n", doMagic2( &alpha, beta, gamma ) );
+printf( "%d\n", doMagic3( alpha, beta, gamma ) );
+*/
+
+/*
+printf( "%d\n", doMagic3( alpha, beta, gamma ) );
+printf( "%d\n", doMagic2( &beta, gamma, alpha ) );
+printf( "%d\n", doMagic1( gamma, beta, &alpha ) );
+
+*/
+
+/*
+printf( "%d\n", doMagic3( alpha, beta, gamma ) );
+printf( "%d\n", doMagic2( &alpha, beta, gamma ) );
+printf( "%d\n", doMagic1( alpha, beta, &gamma ) );
+*/

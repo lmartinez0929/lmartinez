@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define SIZE  5
+
+int main(void) {
+
+int array[ SIZE ][ SIZE] = { 
+{ 4, 5, 6, 7, 8 },
+{ 1, 2, 3, 4, 5 },
+{ 3, 6, 7, 8, 9 },
+{ 2, 3, 4, 5, 6 },
+{ 5, 6, 7, 8, 9 } };
+
+ int i, j, row, col;
+ int *ptr = array[ 0 ];
+
+ for( i = 0; i < SIZE * SIZE; i++ )
+ {
+ if( i % SIZE - 1>3 )
+ *( ptr + i ) = 0;
+ else if( i % SIZE== 2 )
+ *( ptr + i * SIZE ) = 100;
+ }
+
+//traversing 2d array w/o nested for loop
+for (i = 0; i < SIZE * SIZE; i++)
+{
+  int row = i / SIZE;
+  int col = i % SIZE;
+  printf("%d", array[row][col]);
+}
+printf("\n");
+
+//print 2d array as a table
+/*for(i = 0; i < SIZE; i++)
+{
+  for (j= 0; j < SIZE; j++)
+  {
+    printf("%d", array[i][j]);
+  }
+  printf("\n");
+}*/
+
+int result = 10 % SIZE -1>3;
+
+printf("%d", result);
+  return 0;
+}
